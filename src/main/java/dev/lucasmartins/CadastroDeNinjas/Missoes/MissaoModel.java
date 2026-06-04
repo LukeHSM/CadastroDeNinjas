@@ -7,19 +7,21 @@ import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
-public class MissoesModel {
+public class MissaoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private rankMissao rank;
+
+    @OneToMany(mappedBy = "missao")
     private List<NinjaModel> ninjas;
 
-    public MissoesModel() {
+    public MissaoModel() {
     }
 
-    public MissoesModel(String nome, rankMissao rank, List<NinjaModel> ninjas) {
+    public MissaoModel(String nome, rankMissao rank, List<NinjaModel> ninjas) {
         this.nome = nome;
         this.rank = rank;
         this.ninjas = ninjas;
