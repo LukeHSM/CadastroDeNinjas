@@ -2,11 +2,15 @@ package dev.lucasmartins.CadastroDeNinjas.Missoes;
 
 import dev.lucasmartins.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
+@NoArgsConstructor
+@AllArgsConstructor
 public class MissaoModel {
 
     @Id
@@ -17,43 +21,6 @@ public class MissaoModel {
 
     @OneToMany(mappedBy = "missao")
     private List<NinjaModel> ninjas;
-
-    public MissaoModel() {
-    }
-
-    public MissaoModel(String nome, rankMissao rank, List<NinjaModel> ninjas) {
-        this.nome = nome;
-        this.rank = rank;
-        this.ninjas = ninjas;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public rankMissao getRank() {
-        return rank;
-    }
-
-    public void setRank(rankMissao rank) {
-        this.rank = rank;
-    }
-
-    public List<NinjaModel> getNinjas() {
-        return ninjas;
-    }
-
-    public void setNinjas(List<NinjaModel> ninjas) {
-        this.ninjas = ninjas;
-    }
 
     enum rankMissao {
         S("Rank S: Missão de alto risco, geralmente envolvendo alvos extremamente perigosos ou tarefas que exigem habilidades excepcionais."),
@@ -68,4 +35,6 @@ public class MissaoModel {
             this.descricao = descricao;
         }
     }
+
+
 }
