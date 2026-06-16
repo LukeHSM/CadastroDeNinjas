@@ -3,10 +3,12 @@ package dev.lucasmartins.CadastroDeNinjas.Ninjas;
 import dev.lucasmartins.CadastroDeNinjas.Missoes.MissaoModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_cadastro")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class NinjaModel {
