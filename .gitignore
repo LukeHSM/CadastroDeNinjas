@@ -34,3 +34,6 @@ build/
 
 ### .ENV ###
 .env
+
+### DATA (BANCO DE DADOS EM MEMÓRIA) ###
+data
