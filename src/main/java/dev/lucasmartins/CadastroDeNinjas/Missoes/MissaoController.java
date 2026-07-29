@@ -1,15 +1,34 @@
 package dev.lucasmartins.CadastroDeNinjas.Missoes;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/missoes")
 public class MissaoController {
 
-    @GetMapping("/missoes")
-    public String verMissoes(){
-        return "Relações Ninja / Missões:";
+    @GetMapping("/listar")
+    public String listarMissoes(){
+        return "Lista de missões:";
     }
+
+    @GetMapping("/buscar-por-id")
+    public String buscarMissaoPorID(){
+        return "Buscando missao pelo ID...";
+    }
+
+    @PostMapping("/criar")
+    public String criarMissao(){
+        return "Missão criada com sucesso!";
+    }
+
+    @PutMapping("/alterar")
+    public String alterarMissao(){
+        return "Missão alterada com sucesso!";
+    }
+
+    @DeleteMapping("/deletar")
+    public String deletarMissao(){
+        return "Missão deletada com sucesso!";
+    }
+
 }
