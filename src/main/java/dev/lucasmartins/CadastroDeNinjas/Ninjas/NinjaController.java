@@ -3,6 +3,7 @@ package dev.lucasmartins.CadastroDeNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/ninjas")
@@ -19,9 +20,9 @@ public class NinjaController {
         return ninjaService.listarNinjas();
     }
 
-    @GetMapping("/buscar-por-id")
-    public String buscarNinjaPorID(){
-        return "Buscando ninja pelo ID...";
+    @GetMapping("/buscar/{id}")
+    public NinjaModel buscarPorID(@PathVariable Long id){
+        return ninjaService.buscarNinjaPorID(id);
     }
 
     @PostMapping("/criar")
