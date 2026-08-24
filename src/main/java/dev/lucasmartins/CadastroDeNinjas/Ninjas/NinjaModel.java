@@ -25,7 +25,7 @@ public class NinjaModel {
     private String email;
 
     @Column(name = "idade")
-    private int idade;
+    private Integer idade;
 
     @ManyToOne
     @JoinColumn(name = "missao_id")
